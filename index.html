@@ -523,16 +523,19 @@
             }
         }
 
-        // Position the No button initially ON TOP of Yes button
+        // Position the No button PERFECTLY on top of Yes button
         const noBtn = document.getElementById('noBtn');
         
         function positionNoButtonInitially() {
             const yesBtn = document.querySelector('.btn-yes');
             const yesBtnRect = yesBtn.getBoundingClientRect();
             
-            // Position directly on top of Yes button
+            // Match exact size and position of Yes button
+            noBtn.style.width = yesBtnRect.width + 'px';
+            noBtn.style.height = yesBtnRect.height + 'px';
             noBtn.style.left = yesBtnRect.left + 'px';
             noBtn.style.top = yesBtnRect.top + 'px';
+            noBtn.style.padding = '0';
         }
 
         // Make the No button run away
