@@ -426,7 +426,7 @@
         <!-- Question Screen -->
         <div class="question-screen" id="questionScreen">
             <div class="heart-icon">💝</div>
-            <h1>Will You Be My Valentine?</h1>
+            <h1>Nanaa, Will You Be My Valentine?</h1>
             <p class="subtitle">I promise to make every moment magical ✨</p>
             <div class="love-poem">
                 "In a world full of people, my heart chose you.<br>
@@ -523,17 +523,16 @@
             }
         }
 
-        // Position the No button initially
+        // Position the No button initially ON TOP of Yes button
         const noBtn = document.getElementById('noBtn');
         
         function positionNoButtonInitially() {
-            const container = document.querySelector('.container');
-            const containerRect = container.getBoundingClientRect();
-            const btnRect = noBtn.getBoundingClientRect();
+            const yesBtn = document.querySelector('.btn-yes');
+            const yesBtnRect = yesBtn.getBoundingClientRect();
             
-            // Position it next to the Yes button area
-            noBtn.style.left = (containerRect.left + containerRect.width/2 + 60) + 'px';
-            noBtn.style.top = (containerRect.bottom - 80) + 'px';
+            // Position directly on top of Yes button
+            noBtn.style.left = yesBtnRect.left + 'px';
+            noBtn.style.top = yesBtnRect.top + 'px';
         }
 
         // Make the No button run away
